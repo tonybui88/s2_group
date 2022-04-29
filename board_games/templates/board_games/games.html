@@ -1,0 +1,17 @@
+{% extends 'board_games/base.html' %}
+
+{% block content %}
+    <p> Games </p>
+    <p><form action="{% url 'board_games:new_game' %}">
+            <button name="submit">Add Game</button>    
+        </form>
+    </p>
+    <ul>
+        {% for game in games %}
+            <li>{{ game }}</li>
+        {% empty %}
+        <li> No people has been borrow game to the list yet! </li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}
